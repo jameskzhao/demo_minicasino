@@ -3,7 +3,7 @@ class GamePlayController{
     public static function doPlay($amount, $user){
         global $mysqli;
         if($amount>0){
-            $arr = array(1,3,5,10);
+            $arr = range(1,20);
             $rand = $arr[array_rand($arr, 1)];
             if($rand==$amount){
                 // wins

@@ -27,8 +27,9 @@ class GameDetail{
                 </div>
             </div>
             <div class="row">
-                Balance: $<span id="user-balance">'.$user->balance.'</span>
-            </div>
+                Balance: $<span id="user-balance">'.intval($user->balance).'</span>'
+                .($user->balance<10?'<p>Looks like you don\'t have enough balance now. <a href="/buy">Click here to buy more.</a></p>':'')
+            .'</div>
             <div class="row">
                 <a href="/play/1" class="btn btn-play '.($user->balance<1?'disabled':'').'" data-value="1">$1</a>
                 <a href="/play/3" class="btn btn-play '.($user->balance<3?'disabled':'').'" data-value="3">$3</a>

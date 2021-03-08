@@ -44,6 +44,10 @@ switch ($page) {
         require_once 'application/Controller/RegisterUser.php';
         RegisterUser::doRegister();
         break;
+    case 'buy':
+        require_once 'application/Controller/Buy.php';
+        Buy::doBuy($user);
+        break;
     case 'games':
         require_once 'application/Controller/GameListController.php';
         require_once 'application/View/GameList.php';
@@ -55,14 +59,14 @@ switch ($page) {
         RegisterController::show($user);
         break;
     case 'game':
-        $game_id = $_GET['id']??0;
+        $game_id = $_GET['id'] ?? 0;
         require_once 'application/Controller/GameController.php';
         require_once 'application/View/GameDetail.php';
         GameController::show($game_id, $user);
         break;
     case 'play':
         require_once 'application/Controller/GamePlayController.php';
-        $amount = $_GET['amount']??0;
+        $amount = $_GET['amount'] ?? 0;
         GamePlayController::doPlay($amount, $user);
         break;
     case 'index':
