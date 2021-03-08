@@ -7,7 +7,7 @@
     rewrite ^/loginFailed?$ /index.php?page=loginFailed last;
     rewrite ^/games?$ /index.php?page=games last;
     rewrite ^/registerUser?$ /index.php?page=registerUser last;
-    rewrite ^/user?$ /index.php?page=user last;
+    rewrite ^/buy?$ /index.php?page=buy last;
     rewrite ^/register?$ /index.php?page=register last;
     rewrite ^/game/([\d]*)/?$ /index.php?page=game&id=$1 last;
     rewrite ^/game/([\d]*)/([^/]*)?$ /index.php?page=game&id=$1&title=$2 last;
